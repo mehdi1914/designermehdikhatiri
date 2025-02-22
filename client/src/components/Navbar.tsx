@@ -9,7 +9,8 @@ const navItems = [
   { href: "#hero", label: "Home" },
   { href: "#bio", label: "Bio" },
   { href: "#portfolio", label: "Portfolio" },
-  { href: "#contact", label: "Contact" }
+  { href: "#contact", label: "Contact" },
+  { href: "#elevator-pitch", label: "Elevator Pitch", soon: true }
 ];
 
 const Logo = () => (
@@ -57,14 +58,20 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="text-white hover:text-white/90 transition-colors relative group"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
-              </button>
+              <div key={item.label} className="relative">
+                <button
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-white hover:text-white/90 transition-colors relative group"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
+                </button>
+                {item.soon && (
+                  <span className="absolute -top-2 -right-6 text-xs bg-white/20 text-white px-2 py-0.5 rounded-full">
+                    Soon
+                  </span>
+                )}
+              </div>
             ))}
           </div>
 
@@ -78,13 +85,19 @@ export default function Navbar() {
             <SheetContent>
               <nav className="flex flex-col gap-4 mt-8">
                 {navItems.map((item) => (
-                  <button
-                    key={item.label}
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-foreground hover:text-primary transition-colors w-full text-left py-2"
-                  >
-                    {item.label}
-                  </button>
+                  <div key={item.label} className="relative">
+                    <button
+                      onClick={() => scrollToSection(item.href)}
+                      className="text-foreground hover:text-primary transition-colors w-full text-left py-2"
+                    >
+                      {item.label}
+                    </button>
+                    {item.soon && (
+                      <span className="absolute top-2 ml-2 text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">
+                        Soon
+                      </span>
+                    )}
+                  </div>
                 ))}
               </nav>
             </SheetContent>

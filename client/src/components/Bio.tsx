@@ -1,8 +1,4 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { SiGithub, SiLinkedin, SiBehance, SiDribbble } from "react-icons/si";
-import { Link } from "wouter";
 
 export default function Bio() {
   return (
@@ -16,7 +12,7 @@ export default function Bio() {
           className="grid md:grid-cols-2 gap-12 items-center"
         >
           <div>
-            <h2 className="text-3xl font-bold mb-6">About Me</h2>
+            <h2 className="text-3xl font-bold mb-6">Bio</h2>
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold mb-2">Mehdi Khatiri</h3>
@@ -30,16 +26,16 @@ export default function Bio() {
               <div>
                 <h4 className="font-semibold mb-3">What I Do</h4>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>🎨 Design intuitive interfaces using Figma and Adobe Suite.</li>
-                  <li>🔍 Conduct user research and prototype testing.</li>
-                  <li>🤝 Collaborate with developers using HTML/CSS for seamless handoffs.</li>
+                  <li>Design intuitive interfaces using Figma and Adobe Suite</li>
+                  <li>Conduct user research and prototype testing</li>
+                  <li>Collaborate with developers using HTML/CSS for seamless handoffs</li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="font-semibold mb-3">Beyond Work</h4>
                 <p className="text-muted-foreground">
-                  🏋️ Gym discipline fuels my focus • 📸 Storytelling through photography • 🎭 Theater-inspired empathy for user narratives
+                  Gym discipline fuels my focus • Storytelling through photography • Theater-inspired empathy for user narratives
                 </p>
               </div>
             </div>

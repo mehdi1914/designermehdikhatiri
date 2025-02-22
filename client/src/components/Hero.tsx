@@ -13,38 +13,46 @@ const socialLinks = [
 ];
 
 export default function Hero() {
-  const [currentText, setCurrentText] = useState(roles[0]);
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
+  const [currentText, setCurrentText] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
-    if (subIndex === roles[index].length + 1 && !reverse) {
-      setReverse(true);
-      return;
-    }
+    let timeout: NodeJS.Timeout;
+    let charIndex = 0;
+    let isDeleting = false;
 
-    if (subIndex === 0 && reverse) {
-      setReverse(false);
-      setIndex((prev) => (prev + 1) % roles.length);
-      return;
-    }
+    const type = () => {
+      const currentRole = roles[roleIndex];
 
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-      setCurrentText(roles[index].slice(0, subIndex));
-    }, reverse ? 50 : 100);
+      if (!isDeleting && charIndex <= currentRole.length) {
+        setCurrentText(currentRole.substring(0, charIndex));
+        charIndex++;
+        timeout = setTimeout(type, 100);
+      } else if (isDeleting && charIndex >= 0) {
+        setCurrentText(currentRole.substring(0, charIndex));
+        charIndex--;
+        timeout = setTimeout(type, 50);
+      } else if (charIndex < 0) {
+        isDeleting = false;
+        charIndex = 0;
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+        timeout = setTimeout(type, 500);
+      } else {
+        isDeleting = true;
+        timeout = setTimeout(type, 2000);
+      }
+    };
 
+    timeout = setTimeout(type, 100);
     return () => clearTimeout(timeout);
-  }, [subIndex, reverse, index]);
+  }, [roleIndex]);
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0a0a0a]">
-      {/* Animated Background */}
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-background">
       {[...Array(3)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-primary/10"
+          className="absolute rounded-full bg-primary/5"
           initial={{ 
             width: `${(i + 1) * 300}px`,
             height: `${(i + 1) * 300}px`,
@@ -70,26 +78,26 @@ export default function Hero() {
         />
       ))}
 
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto text-center"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text glow">
+            <span className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text">
               {currentText}
-              <span className="blinking-cursor">|</span>
+              <span className="inline-block ml-1 animate-blink">|</span>
             </span>
           </h1>
 
-          <p className="text-xl text-gray-400 mb-8">
+          <p className="text-xl text-gray-400 mb-12">
             Building Founder-Focused Digital Experiences
           </p>
 
-          <motion.div className="flex gap-4 justify-center mb-12">
+          <div className="flex gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90"
@@ -111,7 +119,7 @@ export default function Hero() {
             >
               Let's Connect
             </Button>
-          </motion.div>
+          </div>
 
           <motion.div
             className="flex justify-center gap-6"
@@ -136,19 +144,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      <style jsx>{`
-        .glow {
-          text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7;
-        }
-        .blinking-cursor {
-          animation: blink 1s infinite;
-          margin-left: 2px;
-        }
-        @keyframes blink {
-          50% { opacity: 0; }
-        }
-      `}</style>
     </section>
   );
 }
