@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+
+const roles = ["Frontend Development", "UI/UX Designer", "Problem Solver"];
 
 const textVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -15,6 +18,38 @@ const textVariants = {
 };
 
 export default function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    let currentText = "";
+    let currentIndex = 0;
+    let timeoutId: NodeJS.Timeout;
+
+    const typeText = () => {
+      if (currentIndex < roles[roleIndex].length) {
+        currentText = roles[roleIndex].substring(0, currentIndex + 1);
+        setDisplayText(currentText);
+        currentIndex++;
+        timeoutId = setTimeout(typeText, 100);
+      } else {
+        setIsTyping(false);
+        timeoutId = setTimeout(() => {
+          setIsTyping(true);
+          currentIndex = 0;
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }, 2000);
+      }
+    };
+
+    if (isTyping) {
+      typeText();
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [roleIndex, isTyping]);
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0a0a0a]">
       {[...Array(3)].map((_, i) => (
@@ -62,18 +97,16 @@ export default function Hero() {
           >
             Hi, I'm{" "}
             <motion.span 
-              className="text-primary"
-              variants={textVariants}
-              custom={1}
-            >
-              a Frontend D
-            </motion.span>
-            <motion.span
               className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text"
-              variants={textVariants}
-              custom={2}
             >
-              |
+              {displayText}
+              <motion.span
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ duration: 1, repeat: Infinity }}
+                className="inline-block"
+              >
+                |
+              </motion.span>
             </motion.span>
           </motion.h1>
 

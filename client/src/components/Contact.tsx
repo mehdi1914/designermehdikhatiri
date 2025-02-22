@@ -1,31 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { SiGithub, SiLinkedin } from "react-icons/si";
-import { Mail, ArrowUp } from "lucide-react";
-
-const socialLinks = [
-  {
-    icon: SiLinkedin,
-    href: "https://www.linkedin.com/in/mehdi-khatiri/",
-    label: "LinkedIn"
-  },
-  {
-    icon: SiGithub,
-    href: "https://github.com/mehdi1914",
-    label: "GitHub"
-  },
-  {
-    icon: Mail,
-    href: "mailto:contact@mehdi.dev",
-    label: "Email"
-  }
-];
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function Contact() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -34,50 +13,66 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center"
         >
-          <h2 className="text-3xl font-bold mb-8">Let's Connect</h2>
-          <div className="flex justify-center gap-6 mb-12">
-            {socialLinks.map((link) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <link.icon className="h-8 w-8" />
-                <span className="sr-only">{link.label}</span>
-              </motion.a>
-            ))}
+          <h2 className="text-3xl font-bold text-center mb-4">Let's Connect</h2>
+          <p className="text-center text-muted-foreground mb-12">
+            Have a project in mind? Let's discuss how we can work together
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <p className="text-lg mb-8">
+                I'm always interested in hearing about new projects and opportunities.
+                Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Mail className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <p>contact@example.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <p>+1 (555) 123-4567</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <MapPin className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Location</p>
+                    <p>San Francisco, CA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <Input placeholder="Name" />
+              <Input placeholder="Email" type="email" />
+              <Input placeholder="Subject" />
+              <Textarea 
+                placeholder="Your message..." 
+                className="min-h-[150px]"
+              />
+              <Button className="w-full">
+                Send Message
+                <Send className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-center text-sm text-muted-foreground"
-          >
-            <p>Built with ❤️ by Mehdi</p>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="fixed bottom-8 right-8"
-          >
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full shadow-lg"
-              onClick={scrollToTop}
-            >
-              <ArrowUp className="h-4 w-4" />
-            </Button>
-          </motion.div>
         </motion.div>
       </div>
     </section>
