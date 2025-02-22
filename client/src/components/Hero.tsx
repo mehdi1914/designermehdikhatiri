@@ -12,51 +12,31 @@ const socialLinks = [
   { icon: SiDribbble, href: "https://dribbble.com/MEHDI_UXUI", label: "Dribbble" }
 ];
 
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.8,
-      ease: "easeOut"
-    }
-  })
-};
-
 export default function Hero() {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
+  const [currentText, setCurrentText] = useState(roles[0]);
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
 
   useEffect(() => {
-    let currentText = "";
-    let currentIndex = 0;
-    let timeoutId: NodeJS.Timeout;
-
-    const typeText = () => {
-      if (currentIndex < roles[roleIndex].length) {
-        currentText = roles[roleIndex].substring(0, currentIndex + 1);
-        setDisplayText(currentText);
-        currentIndex++;
-        timeoutId = setTimeout(typeText, 50); // Faster typing speed
-      } else {
-        setIsTyping(false);
-        timeoutId = setTimeout(() => {
-          setIsTyping(true);
-          currentIndex = 0;
-          setRoleIndex((prev) => (prev + 1) % roles.length);
-        }, 2000);
-      }
-    };
-
-    if (isTyping) {
-      typeText();
+    if (subIndex === roles[index].length + 1 && !reverse) {
+      setReverse(true);
+      return;
     }
 
-    return () => clearTimeout(timeoutId);
-  }, [roleIndex, isTyping]);
+    if (subIndex === 0 && reverse) {
+      setReverse(false);
+      setIndex((prev) => (prev + 1) % roles.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (reverse ? -1 : 1));
+      setCurrentText(roles[index].slice(0, subIndex));
+    }, reverse ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, reverse, index]);
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0a0a0a]">
@@ -97,45 +77,19 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="max-w-4xl mx-auto"
         >
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6"
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
-            custom={0}
-          >
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Hi, I'm{" "}
-            <motion.span 
-              className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text"
-            >
-              {displayText}
-              <motion.span
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-                className="inline-block ml-1"
-              >
-                |
-              </motion.span>
-            </motion.span>
-          </motion.h1>
+            <span className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text glow">
+              {currentText}
+              <span className="blinking-cursor">|</span>
+            </span>
+          </h1>
 
-          <motion.p 
-            className="text-xl text-gray-400 mb-8"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            custom={3}
-          >
+          <p className="text-xl text-gray-400 mb-8">
             Building Founder-Focused Digital Experiences
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="flex gap-4 justify-center mb-12"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            custom={4}
-          >
+          <motion.div className="flex gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90"
@@ -182,6 +136,19 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      <style jsx>{`
+        .glow {
+          text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7;
+        }
+        .blinking-cursor {
+          animation: blink 1s infinite;
+          margin-left: 2px;
+        }
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+      `}</style>
     </section>
   );
 }
