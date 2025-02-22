@@ -46,7 +46,7 @@ export default function Bio() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/60 rounded-2xl transform rotate-3" />
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+              src="https://media-hosting.imagekit.io//501bb468f7024f1e/1735640916007.jpeg?Expires=1834861822&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=gX~Qhq5fCJl0IPmgGjw25o5IVsDNk9yZbDdzogUv40nMTibHanfPpIF59cbYvq2WtM6Ne5K8JeTGFhKSMWcwu3wUkxHlh20~zLFtksorx4c~LY2XYmuzi~0tSIIcGFpyZxdFkKXQdunmzB1n548bdJyL8DZGGB1WsNaD4UVR09hoKKE63SBBeBw9UJdx3NU4gWNHJN82U6iTC3fiF2XcLZrxWyNzixkG96gqTSKypxGxgIkSnj6-sgl~aozAScf6jtEPwAZjp2hk3V~wMHC6DpHzuhf7mU00gd9GFXLHjMHLCm01KdEsSoP~r94i0QOsDnUgimM~JOSE5osvWr1aSA__"
               alt="Profile"
               className="absolute inset-0 w-full h-full object-cover rounded-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-300"
             />
