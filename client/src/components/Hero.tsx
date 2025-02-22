@@ -3,18 +3,18 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center relative overflow-hidden bg-primary">
       {/* Animated Background Circles */}
       {[...Array(3)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-br from-primary/20 to-primary/5"
+          className="absolute rounded-full bg-white/10"
           initial={{ 
             width: `${(i + 1) * 200}px`,
             height: `${(i + 1) * 200}px`,
             x: -100,
             y: -100,
-            opacity: 0.3
+            opacity: 0.1
           }}
           animate={{
             x: [0, 50, 0],
@@ -41,12 +41,12 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Hi, I'm Mehdi 👋
             <br />
-            <span className="text-primary">UI/UX Designer</span>
+            <span className="text-white/90">UI/UX Designer</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-xl text-white/80 mb-8">
             Crafting beautiful and intuitive digital experiences that users love.
           </p>
           <motion.div
@@ -55,8 +55,11 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90"
-              onClick={() => document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-white text-primary hover:bg-white/90"
+              onClick={() => {
+                const element = document.querySelector('#portfolio');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Explore My Work
             </Button>

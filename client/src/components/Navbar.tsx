@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { motion } from "framer-motion";
@@ -10,7 +10,7 @@ const navItems = [
   { href: "#bio", label: "Bio" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#contact", label: "Contact" },
-  { href: "#", label: "Elevator Pitch 🎥", soon: true }
+  { href: "#elevator-pitch", label: "Elevator Pitch 🎥", soon: true }
 ];
 
 export default function Navbar() {
@@ -38,12 +38,12 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-lg bg-background/80" : "bg-transparent"
+        isScrolled ? "bg-primary/90 backdrop-blur-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-2xl font-bold text-primary">
+          <Link href="/" className="text-2xl font-bold text-white">
             Mehdi
           </Link>
 
@@ -53,13 +53,13 @@ export default function Navbar() {
               <div key={item.label} className="relative">
                 <button
                   onClick={() => scrollToSection(item.href)}
-                  className="text-foreground hover:text-primary transition-colors relative group"
+                  className="text-white hover:text-white/90 transition-colors relative group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
                 </button>
                 {item.soon && (
-                  <span className="absolute -top-2 -right-6 text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">
+                  <span className="absolute -top-2 -right-6 text-xs bg-white/20 text-white px-2 py-0.5 rounded-full">
                     Soon
                   </span>
                 )}
@@ -70,17 +70,17 @@ export default function Navbar() {
           {/* Mobile Navigation */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-white">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="w-[300px] sm:w-[400px]">
+            <SheetContent>
               <nav className="flex flex-col gap-4 mt-8">
                 {navItems.map((item) => (
                   <div key={item.label} className="relative">
                     <button
                       onClick={() => scrollToSection(item.href)}
-                      className="text-foreground hover:text-primary transition-colors w-full text-left py-2"
+                      className="text-white hover:text-primary transition-colors w-full text-left py-2"
                     >
                       {item.label}
                     </button>
