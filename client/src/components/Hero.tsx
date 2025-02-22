@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { SiGithub, SiLinkedin, SiBehance, SiDribbble } from "react-icons/si";
 
 const roles = ["Frontend Development", "UI/UX Designer", "Problem Solver"];
+
+const socialLinks = [
+  { icon: SiGithub, href: "https://github.com/mehdi1914", label: "GitHub" },
+  { icon: SiLinkedin, href: "https://www.linkedin.com/in/mehdi-khatiri/", label: "LinkedIn" },
+  { icon: SiBehance, href: "https://www.behance.net/mehdikhatiri1", label: "Behance" },
+  { icon: SiDribbble, href: "https://dribbble.com/MEHDI_UXUI", label: "Dribbble" }
+];
 
 const textVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -32,7 +40,7 @@ export default function Hero() {
         currentText = roles[roleIndex].substring(0, currentIndex + 1);
         setDisplayText(currentText);
         currentIndex++;
-        timeoutId = setTimeout(typeText, 100);
+        timeoutId = setTimeout(typeText, 50); // Faster typing speed
       } else {
         setIsTyping(false);
         timeoutId = setTimeout(() => {
@@ -52,6 +60,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0a0a0a]">
+      {/* Animated Background */}
       {[...Array(3)].map((_, i) => (
         <motion.div
           key={i}
@@ -102,8 +111,8 @@ export default function Hero() {
               {displayText}
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="inline-block"
+                transition={{ duration: 0.8, repeat: Infinity }}
+                className="inline-block ml-1"
               >
                 |
               </motion.span>
@@ -121,7 +130,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex gap-4 justify-center"
+            className="flex gap-4 justify-center mb-12"
             variants={textVariants}
             initial="hidden"
             animate="visible"
@@ -148,6 +157,28 @@ export default function Hero() {
             >
               Let's Connect
             </Button>
+          </motion.div>
+
+          <motion.div
+            className="flex justify-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+          >
+            {socialLinks.map((link) => (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <link.icon className="w-6 h-6" />
+                <span className="sr-only">{link.label}</span>
+              </motion.a>
+            ))}
           </motion.div>
         </motion.div>
       </div>

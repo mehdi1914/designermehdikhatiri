@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiBehance, SiDribbble } from "react-icons/si";
 import { Link } from "wouter";
 
 export default function Bio() {
@@ -20,29 +20,27 @@ export default function Bio() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold mb-2">Mehdi Khatiri</h3>
-                <p className="text-lg text-muted-foreground italic">UI/UX Designer & ALX Collaborator</p>
+                <p className="text-lg text-muted-foreground italic">UI/UX Designer | ALX Pathway Program Learner</p>
               </div>
 
               <p className="text-lg text-muted-foreground">
-                👋 Hi there! I'm a creative problem-solver from Morocco, passionate about designing digital experiences that feel intuitive and human. Whether I'm crafting a sleek app interface or collaborating with teams, I thrive on turning ideas into solutions that users love.
+                Passionate about crafting human-centered digital experiences, I blend creativity with technical precision. As an ALX learner, I've honed skills in problem-solving, agile collaboration, and project management to deliver solutions that empower users and businesses alike.
               </p>
 
               <div>
                 <h4 className="font-semibold mb-3">What I Do</h4>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>🎨 <strong>Design:</strong> Wireframes, prototypes, and user research (Figma, Adobe Suite)</li>
-                  <li>🤝 <strong>Collaborate:</strong> Team player with ALX-trained skills in critical thinking and agile workflows</li>
-                  <li>🚀 <strong>Build:</strong> From concept to code (HTML/CSS for seamless developer handoffs)</li>
+                  <li>🎨 Design intuitive interfaces using Figma and Adobe Suite.</li>
+                  <li>🔍 Conduct user research and prototype testing.</li>
+                  <li>🤝 Collaborate with developers using HTML/CSS for seamless handoffs.</li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3">When I'm Not Designing</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>🏋️ <strong>Gym Enthusiast:</strong> Discipline fuels my creativity</li>
-                  <li>📸 <strong>Photography:</strong> Capturing stories through my lens</li>
-                  <li>🎭 <strong>Theater Lover:</strong> Because every great design has a narrative</li>
-                </ul>
+                <h4 className="font-semibold mb-3">Beyond Work</h4>
+                <p className="text-muted-foreground">
+                  🏋️ Gym discipline fuels my focus • 📸 Storytelling through photography • 🎭 Theater-inspired empathy for user narratives
+                </p>
               </div>
             </div>
           </div>
