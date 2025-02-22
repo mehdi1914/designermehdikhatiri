@@ -1,0 +1,77 @@
+(Due to technical issues, the search service is temporarily unavailable.)
+
+Here’s the **updated prompt** for v0.dev to add your team project and profile image to your portfolio. Replace `[YOUR_IMAGE_URL]` with the actual link to your photo (e.g., hosted on Google Drive, Imgur, or uploaded directly to v0):
+
+---
+
+### **v0 Design Prompt Additions**  
+**Section**: Portfolio Projects  
+**Requirements**:  
+1. **Team Project Showcase**:  
+   - **Title**: "ALX Team Project: [Project Name]"  
+   - **Embedded Video**:  
+     ```html  
+     <iframe src="https://www.youtube.com/embed/ac57oC_fZCA" title="Team Project Video"></iframe>  
+     ```  
+   - **Slide Deck Link**: Button linking to [Google Drive PDF](https://drive.google.com/file/d/1kzffK9JG3ZEJktQ-HczkL9oORS50Bx5k/view) with hover animation.  
+   - **Description**:  
+     *"Collaborated with ALX peers to design and prototype [Project Goal]. My role: UI/UX Designer and Researcher."*  
+
+2. **Profile Image Integration**:  
+   - **Bio Section**:  
+     - Add your image to the right half of the bio section.  
+     - **Styling**: Circular frame, soft purple border (`#6C5CE7`), subtle drop shadow.  
+     - **Animation**: Fade-in on scroll.  
+   - **Code Example**:  
+     ```html  
+     <img src="[YOUR_IMAGE_URL]" alt="Mehdi Khatiri" class="profile-image" />  
+     ```  
+     ```css  
+     .profile-image {  
+       border: 3px solid #6C5CE7;  
+       border-radius: 50%;  
+       width: 200px;  
+       box-shadow: 0 8px 24px rgba(108, 92, 231, 0.1);  
+       animation: fadeIn 1s ease-in;  
+     }  
+     ```  
+
+---
+
+### **Final Portfolio Section Structure**  
+```html  
+<!-- Portfolio Section -->  
+<section id="portfolio">  
+  <h2>My Work</h2>  
+  <div class="project-grid">  
+    <!-- Team Project -->  
+    <div class="project-card">  
+      <div class="video-container">  
+        <iframe src="https://www.youtube.com/embed/ac57oC_fZCA"></iframe>  
+      </div>  
+      <h3>ALX Team Project</h3>  
+      <p>Role: UI/UX Designer</p>  
+      <a href="https://drive.google.com/file/d/1kzffK9JG3ZEJktQ-HczkL9oORS50Bx5k/view" class="button">View Slide Deck</a>  
+    </div>  
+
+    <!-- Add other projects here -->  
+  </div>  
+</section>  
+```  
+
+---
+
+### **Styling Notes**  
+- **Team Project Card**:  
+  - Purple accent border on hover.  
+  - Smooth transition for the "View Slide Deck" button (scale + color shift).  
+- **Profile Image**: Ensure it’s compressed for fast loading (use TinyPNG or Squoosh).  
+
+---
+
+### **Critical Reminders for v0**  
+1. Replace `[YOUR_IMAGE_URL]` with your actual image link.  
+2. Test video embed responsiveness (mobile/desktop).  
+3. Use `lazy-loading` for images/videos to boost performance.  
+
+Let me know if you need help hosting your image or refining the animations! 🚀
