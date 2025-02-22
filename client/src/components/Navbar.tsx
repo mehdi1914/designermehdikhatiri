@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Menu } from "lucide-react";
+import { Menu, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { motion } from "framer-motion";
@@ -42,10 +42,11 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-lg" : "bg-transparent"
+        isScrolled ? "bg-background/80 backdrop-blur-lg shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -59,20 +60,31 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <div key={item.label} className="relative">
-                <button
+                <motion.button
                   onClick={() => scrollToSection(item.href)}
                   className="text-white hover:text-white/90 transition-colors relative group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
-                </button>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                </motion.button>
                 {item.soon && (
-                  <span className="absolute -top-2 -right-6 text-xs bg-white/20 text-white px-2 py-0.5 rounded-full">
+                  <span className="absolute -top-2 -right-6 text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">
                     Soon
                   </span>
                 )}
               </div>
             ))}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.open("https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:8288764d-fc17-4854-a9ba-d03b462af49f", "_blank")}
+              className="bg-primary/20 text-primary hover:bg-primary/30 px-4 py-2 rounded-full flex items-center gap-2 transition-colors"
+            >
+              <FileDown className="h-4 w-4" />
+              Resume
+            </motion.button>
           </div>
 
           {/* Mobile Navigation */}
@@ -86,12 +98,13 @@ export default function Navbar() {
               <nav className="flex flex-col gap-4 mt-8">
                 {navItems.map((item) => (
                   <div key={item.label} className="relative">
-                    <button
+                    <motion.button
                       onClick={() => scrollToSection(item.href)}
                       className="text-foreground hover:text-primary transition-colors w-full text-left py-2"
+                      whileHover={{ x: 10 }}
                     >
                       {item.label}
-                    </button>
+                    </motion.button>
                     {item.soon && (
                       <span className="absolute top-2 ml-2 text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">
                         Soon
@@ -99,6 +112,14 @@ export default function Navbar() {
                     )}
                   </div>
                 ))}
+                <motion.button
+                  onClick={() => window.open("https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:8288764d-fc17-4854-a9ba-d03b462af49f", "_blank")}
+                  className="text-primary hover:text-primary/80 transition-colors w-full text-left py-2 flex items-center gap-2"
+                  whileHover={{ x: 10 }}
+                >
+                  <FileDown className="h-4 w-4" />
+                  Download Resume
+                </motion.button>
               </nav>
             </SheetContent>
           </Sheet>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { SiGithub, SiLinkedin, SiBehance, SiDribbble } from "react-icons/si";
+import { FileDown } from "lucide-react";
 
 const roles = ["Frontend Development", "UI/UX Designer", "Problem Solver"];
 
@@ -27,19 +28,19 @@ export default function Hero() {
       if (!isDeleting && charIndex <= currentRole.length) {
         setCurrentText(currentRole.substring(0, charIndex));
         charIndex++;
-        timeout = setTimeout(type, 100);
+        timeout = setTimeout(type, 75); // Faster typing
       } else if (isDeleting && charIndex >= 0) {
         setCurrentText(currentRole.substring(0, charIndex));
         charIndex--;
-        timeout = setTimeout(type, 50);
+        timeout = setTimeout(type, 35); // Even faster deleting
       } else if (charIndex < 0) {
         isDeleting = false;
         charIndex = 0;
         setRoleIndex((prev) => (prev + 1) % roles.length);
-        timeout = setTimeout(type, 500);
+        timeout = setTimeout(type, 300);
       } else {
         isDeleting = true;
-        timeout = setTimeout(type, 2000);
+        timeout = setTimeout(type, 1500);
       }
     };
 
@@ -48,31 +49,32 @@ export default function Hero() {
   }, [roleIndex]);
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-background">
-      {[...Array(3)].map((_, i) => (
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-background to-primary/5">
+      {/* Animated background circles */}
+      {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute rounded-full bg-primary/5"
           initial={{ 
-            width: `${(i + 1) * 300}px`,
-            height: `${(i + 1) * 300}px`,
-            x: -150,
-            y: -150,
-            opacity: 0.1
+            width: `${(i + 1) * 200}px`,
+            height: `${(i + 1) * 200}px`,
+            x: -100,
+            y: -100,
+            opacity: 0.05
           }}
           animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
+            x: [0, 30, 0],
+            y: [0, 20, 0],
             rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 20 + i * 5,
+            duration: 15 + i * 5,
             repeat: Infinity,
             ease: "linear"
           }}
           style={{
-            left: `${i * 20}%`,
-            top: `${i * 25}%`,
+            left: `${i * 15}%`,
+            top: `${i * 20}%`,
             zIndex: 0
           }}
         />
@@ -85,9 +87,18 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="max-w-4xl mx-auto text-center"
         >
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-2xl mb-4 text-primary/80"
+          >
+            Mehdi Khatiri
+          </motion.p>
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text inline-flex">
               {currentText}
               <span className="inline-block ml-1 animate-blink">|</span>
             </span>
@@ -113,11 +124,11 @@ export default function Hero() {
               variant="outline"
               className="border-primary text-primary hover:bg-primary/10"
               onClick={() => {
-                const element = document.querySelector('#contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
+                window.open("https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:8288764d-fc17-4854-a9ba-d03b462af49f", "_blank");
               }}
             >
-              Let's Connect
+              Download Resume
+              <FileDown className="ml-2 h-4 w-4" />
             </Button>
           </div>
 
