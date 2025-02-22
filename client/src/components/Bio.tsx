@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { Link } from "wouter";
 
 export default function Bio() {
   return (
@@ -14,29 +17,36 @@ export default function Bio() {
         >
           <div>
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              I'm a passionate UI/UX designer with a focus on creating intuitive and engaging digital experiences. With extensive experience in design and development, I bring creativity and technical expertise to every project.
-            </p>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-4">Certifications & Education</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-2" />
-                    ALX Software Engineering Program
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-2" />
-                    Google UX Design Certificate
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-2" />
-                    Frontend Development Certification
-                  </li>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Mehdi Khatiri</h3>
+                <p className="text-lg text-muted-foreground italic">UI/UX Designer & ALX Collaborator</p>
+              </div>
+
+              <p className="text-lg text-muted-foreground">
+                👋 Hi there! I'm a creative problem-solver from Morocco, passionate about designing digital experiences that feel intuitive and human. Whether I'm crafting a sleek app interface or collaborating with teams, I thrive on turning ideas into solutions that users love.
+              </p>
+
+              <div>
+                <h4 className="font-semibold mb-3">What I Do</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>🎨 <strong>Design:</strong> Wireframes, prototypes, and user research (Figma, Adobe Suite)</li>
+                  <li>🤝 <strong>Collaborate:</strong> Team player with ALX-trained skills in critical thinking and agile workflows</li>
+                  <li>🚀 <strong>Build:</strong> From concept to code (HTML/CSS for seamless developer handoffs)</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-3">When I'm Not Designing</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>🏋️ <strong>Gym Enthusiast:</strong> Discipline fuels my creativity</li>
+                  <li>📸 <strong>Photography:</strong> Capturing stories through my lens</li>
+                  <li>🎭 <strong>Theater Lover:</strong> Because every great design has a narrative</li>
+                </ul>
+              </div>
+            </div>
           </div>
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
