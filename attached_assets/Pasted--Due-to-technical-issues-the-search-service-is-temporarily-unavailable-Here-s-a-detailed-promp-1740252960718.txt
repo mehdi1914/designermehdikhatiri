@@ -1,0 +1,95 @@
+(Due to technical issues, the search service is temporarily unavailable.)
+
+Here’s a **detailed prompt** for v0.dev to create your website with a modern purple aesthetic, smooth animations, and a transparent navbar. Adjust based on v0’s capabilities:
+
+---
+
+### **v0 Design Prompt**  
+**Title**: Modern Purple UI/UX Portfolio  
+**Style**: Clean, minimalist, with soft animations and a cohesive purple theme.  
+
+---
+
+#### **Core Requirements**  
+1. **Color Palette**:  
+   - **Primary**: Purple (`#6C5CE7` for accents, buttons, links).  
+   - **Secondary**: Soft Lavender (`#A8A4FF` for backgrounds, hover effects).  
+   - **Neutral**: White (`#FFFFFF` for text) + Light Gray (`#F8F9FA` for sections).  
+   - **Transparency**: Use `rgba(108, 92, 231, 0.1)` for navbar/overlays.  
+
+2. **Navbar**:  
+   - **Transparent**: Fixed position with blur effect (backdrop-filter).  
+   - **Links**: Home | Bio | Portfolio | Contact (smooth scroll).  
+   - **Hover Animation**: Underline grows from left to right in purple.  
+
+3. **Hero Section**:  
+   - **Text**: "Hi, I’m Mehdi 👋 UI/UX Designer" + Tagline.  
+   - **Animated CTA Button**: "Explore My Work" with hover scaling.  
+   - **Background**: Subtle floating circles (purple gradients, CSS animation).  
+
+4. **Bio Section**:  
+   - **Layout**: Split 50/50 (Text | Profile Image).  
+   - **Content**: Short bio (3–4 lines) + ALX/certification highlights.  
+   - **Animation**: Fade-in on scroll.  
+
+5. **Portfolio Section**:  
+   - **Grid Layout**: 3-column cards (desktop) → 1-column (mobile).  
+   - **Cards**:  
+     - **Team Project**: Embed YouTube video + Slide Deck link.  
+     - **Freelance Work**: Images with hover overlay ("View Case Study").  
+   - **Animation**: Cards float up gently on scroll.  
+
+6. **Contact Section**:  
+   - **Social Links**: LinkedIn, GitHub, Email icons (hover color shift).  
+   - **Footer**: "Built with ❤️ by Mehdi" + Back-to-top button.  
+
+---
+
+#### **Animation Details**  
+- **Navbar**: Blur effect on scroll (transparent → semi-opaque).  
+- **Hero Circles**: Floating animation (rotate + translateY).  
+- **Hover Effects**: Buttons scale 10%, cards lift with shadow.  
+- **Scroll Transitions**: Fade-in for sections (Intersection Observer).  
+
+---
+
+#### **Content to Embed**  
+- **Video**: `<iframe>` for [Team Project](https://www.youtube.com/watch?v=ac57oC_fZCA).  
+- **Slide Deck**: Link to [Google Drive PDF](https://drive.google.com/file/d/1kzffK9JG3ZEJktQ-HczkL9oORS50Bx5k/view).  
+- **External Links**:  
+  - Portfolio: `https://wsla.to/mehdiuxui-1`  
+  - LinkedIn: `https://www.linkedin.com/in/mehdi-khatiri/`  
+  - GitHub: `https://github.com/mehdi1914`  
+
+---
+
+#### **Responsive Design**  
+- **Mobile**: Collapsible hamburger menu (navbar).  
+- **Tablet**: 2-column grid for portfolio.  
+- **Breakpoints**: Tailwind-like `sm:`, `md:`, `lg:`.  
+
+---
+
+#### **Optional v0 Instructions**  
+- Use **Figma-like components** for reusability (buttons, cards).  
+- Add CSS variables for theme colors.  
+- Prioritize performance (lazy-load videos/images).  
+
+---
+
+### **Final Output Example**  
+```javascript  
+// Example of animated navbar (CSS)  
+.navbar {  
+  backdrop-filter: blur(10px);  
+  background: rgba(108, 92, 231, 0.1);  
+  transition: background 0.3s ease;  
+}  
+.navbar.scrolled {  
+  background: rgba(108, 92, 231, 0.9);  
+}  
+```  
+
+---
+
+Test this prompt in v0.dev and refine based on its output! Let me know if you need tweaks. 🎨
