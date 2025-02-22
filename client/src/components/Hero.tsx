@@ -91,24 +91,24 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl mb-4 text-primary/80"
+            className="text-2xl md:text-3xl mb-4 text-primary/80"
           >
             Mehdi Khatiri
           </motion.p>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text inline-flex">
+            <span className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text inline-block">
               {currentText}
               <span className="inline-block ml-1 animate-blink">|</span>
             </span>
           </h1>
 
-          <p className="text-xl text-gray-400 mb-12">
+          <p className="text-lg md:text-xl text-gray-400 mb-12">
             Building Founder-Focused Digital Experiences
           </p>
 
-          <div className="flex gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90"

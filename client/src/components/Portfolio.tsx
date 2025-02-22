@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { SiFigma, SiGithub } from "react-icons/si";
 
-const alxProjects = [
+const projects = [
   {
     title: "VoyagePath App",
     description: "Collaborated with ALX peers to design and prototype innovative solutions for safer travel. My role: UI/UX Designer and Researcher.",
@@ -14,19 +15,32 @@ const alxProjects = [
 
 const personalProjects = [
   {
-    title: "E-commerce Dashboard",
-    description: "A modern dashboard design for e-commerce analytics with real-time data visualization.",
+    title: "Healthcare Dashboard UI",
+    description: "A modern and intuitive dashboard design for healthcare professionals, focusing on patient management and data visualization.",
+    type: "figma",
+    link: "https://www.figma.com/file/healthcare-dashboard",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef"
+  },
+  {
+    title: "Travel App Design System",
+    description: "Comprehensive design system and component library for a travel booking platform.",
+    type: "figma",
+    link: "https://www.figma.com/file/travel-app",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05"
+  },
+  {
+    title: "E-commerce Platform",
+    description: "Full-stack e-commerce solution built with React and Node.js, featuring user authentication and payment integration.",
+    type: "github",
+    link: "https://github.com/mehdi1914/ecommerce-platform",
     image: "https://images.unsplash.com/photo-1661956602116-aa6865609028"
   },
   {
-    title: "Health & Fitness App",
-    description: "Mobile app design for tracking workouts and nutrition with an intuitive interface.",
-    image: "https://images.unsplash.com/photo-1616469829941-c7200edec809"
-  },
-  {
-    title: "Travel Blog Platform",
-    description: "A responsive blog platform design focused on travel photography and stories.",
-    image: "https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28"
+    title: "Portfolio Website",
+    description: "Modern portfolio website built with React and Framer Motion, featuring smooth animations and responsive design.",
+    type: "github",
+    link: "https://github.com/mehdi1914/portfolio",
+    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d"
   }
 ];
 
@@ -46,7 +60,7 @@ export default function Portfolio() {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold mb-8">ALX Pathway Projects</h3>
             <div className="grid md:grid-cols-1 gap-8">
-              {alxProjects.map((project, index) => (
+              {projects.map((project, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ y: -10 }}
@@ -86,7 +100,7 @@ export default function Portfolio() {
           {/* Personal Projects */}
           <div>
             <h3 className="text-2xl font-semibold mb-8">Personal Projects</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {personalProjects.map((project, index) => (
                 <motion.div
                   key={index}
@@ -95,15 +109,32 @@ export default function Portfolio() {
                 >
                   <Card className="overflow-hidden h-full">
                     <CardContent className="p-0">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full aspect-video object-cover"
-                        loading="lazy"
-                      />
+                      <div className="relative">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full aspect-video object-cover"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm p-2 rounded-full">
+                          {project.type === 'figma' ? (
+                            <SiFigma className="w-5 h-5 text-primary" />
+                          ) : (
+                            <SiGithub className="w-5 h-5 text-primary" />
+                          )}
+                        </div>
+                      </div>
                       <div className="p-6">
                         <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
-                        <p className="text-muted-foreground">{project.description}</p>
+                        <p className="text-muted-foreground mb-4">{project.description}</p>
+                        <Button
+                          variant="outline"
+                          className="w-full"
+                          onClick={() => window.open(project.link, '_blank')}
+                        >
+                          View Project
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
