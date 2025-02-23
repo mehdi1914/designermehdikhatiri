@@ -17,19 +17,34 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Skills & Technologies</h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-3xl font-bold mb-12 text-center"
+        >
+          Skills & Technologies
+        </motion.h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.1 }}
-              className="flex flex-col items-center"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100 
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                rotate: 5,
+                transition: { duration: 0.2 }
+              }}
+              className="flex flex-col items-center bg-background/50 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-primary/25"
             >
               <tech.icon className="w-16 h-16 text-primary mb-2" />
-              <span className="text-muted-foreground">{tech.name}</span>
+              <span className="text-muted-foreground font-medium">{tech.name}</span>
             </motion.div>
           ))}
         </div>

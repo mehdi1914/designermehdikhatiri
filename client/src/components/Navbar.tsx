@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 const navItems = [
   { href: "#hero", label: "Home" },
   { href: "#bio", label: "Bio" },
+  { href: "#skills", label: "Skills" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#contact", label: "Contact" },
   { href: "#elevator-pitch", label: "Elevator Pitch", soon: true }
