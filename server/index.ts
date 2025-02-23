@@ -56,8 +56,8 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Serve the app on port 3000
-  const port = 3000;
+  // Serve the app on port 4000
+  const port = 4000;
   server.listen({
     port,
     host: "0.0.0.0",
