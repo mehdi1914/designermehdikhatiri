@@ -99,8 +99,20 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-primary to-purple-400 text-transparent bg-clip-text inline-block">
-              {currentText}
-              <span className="inline-block ml-1 animate-blink">|</span>
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {currentText}
+              </motion.span>
+              <motion.span
+                className="inline-block ml-1"
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 1, repeat: Infinity }}
+              >
+                |
+              </motion.span>
             </span>
           </h1>
 
