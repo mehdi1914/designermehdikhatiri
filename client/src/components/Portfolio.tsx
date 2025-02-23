@@ -29,11 +29,11 @@ const personalProjects = [
     image: "https://media-hosting.imagekit.io/7bfc2615b4814b4a/Frame%201.png?Expires=1834928982&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=RAbv9q8Brc9brpsBMRTFg09TA8WU2-EEufQgJLLIX4Yh~82SJPA5S0xjcH~iG~yv7fiKtBtK7uFz~b7F7NcQ6sG8xq4-z1POrETJmzpnF8bWv5-oh57SO5Sn1BNWckJWIfSjc-rxZtiJrGuC~pQDRhkwGhdFAgKMcafPhss59eZfF4Q8JVoXOyJsDRrXUHMeINdGL-WNLZE-~GyWsUKb-jf29hvxoIpGj5hxtbpHX3n45rIWKXh0nWDUs3LqohoNhZkmYDDfsNY4NNpjRSN4do4wqehfDa7suuoELbMmE6TJ9WzY92jyTl~pB~iijGKfnVbZJSzzV~WRYVpvJ-YCGw__"
   },
   {
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution built with React and Node.js, featuring user authentication and payment integration.",
+    title: "Task Management App",
+    description: "A comprehensive task management application built with modern technologies for efficient project organization and tracking.",
     type: "github",
-    link: "https://github.com/mehdi1914/ecommerce-platform",
-    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028"
+    link: "https://github.com/MehdiKhatiri1/management.git",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b"
   },
   {
     title: "Portfolio Website",

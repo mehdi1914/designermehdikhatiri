@@ -90,6 +90,16 @@ export default function Skills() {
             </motion.div>
           ))}
         </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-16 text-center"
+        >
+          <h3 className="text-2xl font-semibold text-primary mb-4">More Skills Coming Soon</h3>
+          <p className="text-muted-foreground">Stay tuned for updates on additional technologies and capabilities!</p>
+        </motion.div>
       </div>
     </section>
   );
