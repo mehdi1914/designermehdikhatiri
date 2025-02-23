@@ -19,7 +19,7 @@ const personalProjects = [
     description: "A streamlined sign-up/sign-in flow for a CRM platform, featuring modern UI design and intuitive user experience.",
     type: "figma",
     link: "https://www.behance.net/gallery/219961871/Go-Dev-CRM-Streamlined-Sign-UpSign-In-Flow-in-Figma",
-    image: "/attached_assets/1735640916007.jpeg"
+    image: "https://media-hosting.imagekit.io/588c18f3c0884dc7/ssss.jpg?Expires=1834927805&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=U5pM6YALDPpPHEIYGLI~M2eQ5OFE54SwDQXpD3MnUIq1B~tmz7AkXw632b6~yIgDsl2Z5PnighTnRQfzXWoKF0LYwGIyK7yNwr0XvDSylk~5E30O9AcpzY7A1AjCgMC485lifkRJ63rX3PZgL1dV~4AQqwlODEhJRJJr8Q7~7AHYgHVkOVa24D2uwna4HPRe36OHoUySfR0CYu6v~qFmHBWgBr~cZsyft7-TcxzH6yCPfZadoyLGUb~vHTxW7F7m-nukfjpTSbbnUpPn5Nv3hCTnPSdljPXqp38NzZsfM8cd3NMMYbrsjsO-4yDwcPeJDFtnoG1qsvdj6~--AnzUEA__"
   },
   {
     title: "Travel App Design System",
