@@ -15,11 +15,11 @@ const projects = [
 
 const personalProjects = [
   {
-    title: "Healthcare Dashboard UI",
-    description: "A modern and intuitive dashboard design for healthcare professionals, focusing on patient management and data visualization.",
+    title: "Go Dev CRM",
+    description: "A streamlined sign-up/sign-in flow for a CRM platform, featuring modern UI design and intuitive user experience.",
     type: "figma",
-    link: "https://www.figma.com/file/healthcare-dashboard",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef"
+    link: "https://www.behance.net/gallery/219961871/Go-Dev-CRM-Streamlined-Sign-UpSign-In-Flow-in-Figma",
+    image: "/attached_assets/1735640916007.jpeg"
   },
   {
     title: "Travel App Design System",
