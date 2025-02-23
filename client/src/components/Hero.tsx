@@ -123,7 +123,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90"
+              className="bg-gradient-to-r from-primary to-purple-500 text-white hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-primary/25"
               onClick={() => {
                 const element = document.querySelector('#portfolio');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -134,12 +134,12 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary text-primary hover:bg-primary/10"
+              className="border-2 border-primary bg-transparent text-primary hover:bg-primary/10 transition-all duration-300 shadow-lg hover:shadow-primary/25"
               onClick={() => {
                 window.open("https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:8288764d-fc17-4854-a9ba-d03b462af49f", "_blank");
               }}
             >
-              Download Resume
+              Download CV
               <FileDown className="ml-2 h-4 w-4" />
             </Button>
           </div>
