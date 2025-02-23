@@ -19,14 +19,14 @@ const personalProjects = [
     description: "A streamlined sign-up/sign-in flow for a CRM platform, featuring modern UI design and intuitive user experience.",
     type: "figma",
     link: "https://www.behance.net/gallery/219961871/Go-Dev-CRM-Streamlined-Sign-UpSign-In-Flow-in-Figma",
-    image: "https://media-hosting.imagekit.io/588c18f3c0884dc7/ssss.jpg?Expires=1834927805&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=U5pM6YALDPpPHEIYGLI~M2eQ5OFE54SwDQXpD3MnUIq1B~tmz7AkXw632b6~yIgDsl2Z5PnighTnRQfzXWoKF0LYwGIyK7yNwr0XvDSylk~5E30O9AcpzY7A1AjCgMC485lifkRJ63rX3PZgL1dV~4AQqwlODEhJRJJr8Q7~7AHYgHVkOVa24D2uwna4HPRe36OHoUySfR0CYu6v~qFmHBWgBr~cZsyft7-TcxzH6yCPfZadoyLGUb~vHTxW7F7m-nukfjpTSbbnUpPn5Nv3hCTnPSdljPXqp38NzZsfM8cd3NMMYbrsjsO-4yDwcPeJDFtnoG1qsvdj6~--AnzUEA__"
+    image: "https://media-hosting.imagekit.io//72c9c1401f0e4f07/ssss.jpg?Expires=1834936692&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=VUBAXtdKYACxRTyMUbGGJ9M2xj4oNFtus4wU0gLKnXQKkCgLu4njsrXx1APEzKFgGKKPo40UoN9iMysyGGP37JOr1pnfyHusenhm7wou2INhDF0TJjrSD3uqrhfL9iOlxMeBFoD159btiKL0yOjqWnK8ynZtRhZmn23UQ5S8CRyIOze2lZXV42bgLAAvkPvpSp1n2thJ9kuwIcuSatcPHjWQQC1k0tvHCpcPG8~v-E5zzkfyNHCyMCYaWZXOmQTkzX7K~ubjm~MwJuUUoqu45HDCtvl4adF0wXk1rJVA1sArnAWvdlaAJ92Dk5gcwuDuDVM36LNRKrHPCZzrwLCMEQ__"
   },
   {
     title: "Fresh Market E-Commerce UI",
     description: "Modern and intuitive e-commerce interface design for a fruit and vegetable marketplace.",
     type: "figma",
     link: "https://www.behance.net/gallery/219964195/A-Modern-E-Commerce-UI-for-Fruit-Vegetable",
-    image: "https://media-hosting.imagekit.io/7bfc2615b4814b4a/Frame%201.png?Expires=1834928982&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=RAbv9q8Brc9brpsBMRTFg09TA8WU2-EEufQgJLLIX4Yh~82SJPA5S0xjcH~iG~yv7fiKtBtK7uFz~b7F7NcQ6sG8xq4-z1POrETJmzpnF8bWv5-oh57SO5Sn1BNWckJWIfSjc-rxZtiJrGuC~pQDRhkwGhdFAgKMcafPhss59eZfF4Q8JVoXOyJsDRrXUHMeINdGL-WNLZE-~GyWsUKb-jf29hvxoIpGj5hxtbpHX3n45rIWKXh0nWDUs3LqohoNhZkmYDDfsNY4NNpjRSN4do4wqehfDa7suuoELbMmE6TJ9WzY92jyTl~pB~iijGKfnVbZJSzzV~WRYVpvJ-YCGw__"
+    image: "https://media-hosting.imagekit.io//ca2930007e414b62/Frame%201.png?Expires=1834937212&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=nW0JNr9ez99XSei5RHh8VSvbZd07mehI7rF3ThUWdMkpZRoLtOPKYRniiMAVauU6iqbe8EIgUrjaMnTSzHYacWBoKI14Iedq9M-FhdEfzeXOhDR8LQtSz0ob~qnWlGGpp0w-t~tQRajVDT2U5ipmTyeTqcHOTviTDsXhDD8s7sFVPxWDj9TH4AcL14tpv0UWDy7NlEHa4cxyVd231mTzXztMtZ9N91zThYXfAcHLmAQmNJaGv0vhgKfXENNYtiHgFQ6dEoFFRAx53w2hg7nSbqh5pmUSptMS9bBtXyh1M1F66ePOyo3sTwT9VctE05SkiagqkHyxkJnMn-WxV9mcZg__"
   },
   {
     title: "Task Management App",

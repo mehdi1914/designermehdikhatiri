@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { 
   SiReact, SiTypescript, SiTailwindcss, SiFigma, 
   SiAdobexd, SiJavascript, SiHtml5, SiCss3,
-  SiNodedotjs, SiPython, SiGit, SiVisualstudiocode,
+  SiNodedotjs, SiPython, SiGit,
   SiNextdotjs, SiVite, SiPrisma, SiPostgresql
 } from "react-icons/si";
 
@@ -34,10 +34,9 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 30, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.8 },
   show: { 
     opacity: 1, 
-    y: 0, 
     scale: 1,
     transition: {
       type: "spring",
@@ -48,7 +47,7 @@ const item = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-background/50 backdrop-blur-sm">
+    <section id="skills" className="py-20 bg-background/50 backdrop-blur-sm overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
@@ -60,35 +59,45 @@ export default function Skills() {
         </motion.h2>
         
         <motion.div 
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          className="flex overflow-hidden"
         >
-          {technologies.map((tech) => (
-            <motion.div
-              key={tech.name}
-              variants={item}
-              whileHover={{ 
-                scale: 1.05,
-                rotate: [0, -2, 2, 0],
-                transition: { duration: 0.3 }
-              }}
-              className="flex flex-col items-center p-6 rounded-xl bg-background/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
-            >
-              <tech.icon 
-                className="w-16 h-16 mb-4 transition-colors duration-300" 
-                style={{ color: tech.color }}
-              />
-              <motion.span 
-                className="font-medium text-muted-foreground"
-                whileHover={{ color: tech.color }}
+          <motion.div 
+            className="flex gap-8 py-4"
+            animate={{
+              x: ["-25%", "-50%"],
+              transition: {
+                x: {
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear"
+                }
+              }
+            }}
+          >
+            {[...technologies, ...technologies].map((tech, index) => (
+              <motion.div
+                key={`${tech.name}-${index}`}
+                variants={item}
+                whileHover={{ 
+                  scale: 1.05,
+                  rotate: [0, -2, 2, 0],
+                  transition: { duration: 0.3 }
+                }}
+                className="flex flex-col items-center p-6 rounded-xl bg-background/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 min-w-[200px]"
               >
-                {tech.name}
-              </motion.span>
-            </motion.div>
-          ))}
+                <tech.icon 
+                  className="w-16 h-16 mb-4 transition-colors duration-300" 
+                  style={{ color: tech.color }}
+                />
+                <motion.span 
+                  className="font-medium text-muted-foreground"
+                  whileHover={{ color: tech.color }}
+                >
+                  {tech.name}
+                </motion.span>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
         
         <motion.div
