@@ -22,11 +22,11 @@ const personalProjects = [
     image: "https://media-hosting.imagekit.io/588c18f3c0884dc7/ssss.jpg?Expires=1834927805&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=U5pM6YALDPpPHEIYGLI~M2eQ5OFE54SwDQXpD3MnUIq1B~tmz7AkXw632b6~yIgDsl2Z5PnighTnRQfzXWoKF0LYwGIyK7yNwr0XvDSylk~5E30O9AcpzY7A1AjCgMC485lifkRJ63rX3PZgL1dV~4AQqwlODEhJRJJr8Q7~7AHYgHVkOVa24D2uwna4HPRe36OHoUySfR0CYu6v~qFmHBWgBr~cZsyft7-TcxzH6yCPfZadoyLGUb~vHTxW7F7m-nukfjpTSbbnUpPn5Nv3hCTnPSdljPXqp38NzZsfM8cd3NMMYbrsjsO-4yDwcPeJDFtnoG1qsvdj6~--AnzUEA__"
   },
   {
-    title: "Travel App Design System",
-    description: "Comprehensive design system and component library for a travel booking platform.",
+    title: "Fresh Market E-Commerce UI",
+    description: "Modern and intuitive e-commerce interface design for a fruit and vegetable marketplace.",
     type: "figma",
-    link: "https://www.figma.com/file/travel-app",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05"
+    link: "https://www.behance.net/gallery/219964195/A-Modern-E-Commerce-UI-for-Fruit-Vegetable",
+    image: "https://media-hosting.imagekit.io/7bfc2615b4814b4a/Frame%201.png?Expires=1834928982&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=RAbv9q8Brc9brpsBMRTFg09TA8WU2-EEufQgJLLIX4Yh~82SJPA5S0xjcH~iG~yv7fiKtBtK7uFz~b7F7NcQ6sG8xq4-z1POrETJmzpnF8bWv5-oh57SO5Sn1BNWckJWIfSjc-rxZtiJrGuC~pQDRhkwGhdFAgKMcafPhss59eZfF4Q8JVoXOyJsDRrXUHMeINdGL-WNLZE-~GyWsUKb-jf29hvxoIpGj5hxtbpHX3n45rIWKXh0nWDUs3LqohoNhZkmYDDfsNY4NNpjRSN4do4wqehfDa7suuoELbMmE6TJ9WzY92jyTl~pB~iijGKfnVbZJSzzV~WRYVpvJ-YCGw__"
   },
   {
     title: "E-commerce Platform",
