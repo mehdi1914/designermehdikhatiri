@@ -21,17 +21,7 @@ function Router() {
   );
 }
 
-function Home() { // Added Home component
-  return (
-    <>
-      <Navbar /> {/* Assuming Navbar is implemented */}
-      <Hero />
-      <Bio />
-      <Skills /> {/* Added Skills component */}
-      <Portfolio />
-    </>
-  );
-}
+// Removed duplicate Home component
 
 
 function App() {
