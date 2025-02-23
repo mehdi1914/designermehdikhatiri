@@ -56,13 +56,36 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Serve the app on port 4000
-  const port = 4000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+  // Try ports 5000, 3000, or 8000
+  const tryPorts = [5000, 3000, 8000];
+  
+  const startServer = async (ports: number[]) => {
+    for (const port of ports) {
+      try {
+        await new Promise((resolve, reject) => {
+          server.listen({
+            port,
+            host: "0.0.0.0",
+            reusePort: true,
+          }, () => {
+            log(`serving on port ${port}`);
+            resolve(true);
+          }).on('error', (e) => {
+            if (e.code === 'EADDRINUSE') {
+              log(`Port ${port} is in use, trying next port...`);
+            } else {
+              reject(e);
+            }
+          });
+        });
+        break;
+      } catch (err) {
+        if (port === ports[ports.length - 1]) {
+          throw new Error('All ports are in use');
+        }
+      }
+    }
+  };
+
+  await startServer(tryPorts);
 })();
