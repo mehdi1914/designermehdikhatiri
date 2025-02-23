@@ -5,6 +5,12 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import MagicCursor from "@/components/MagicCursor";
+import Hero from "./components/Hero";
+import Bio from "./components/Bio";
+import Skills from "./components/Skills"; // Added import for Skills component
+import Portfolio from "./components/Portfolio";
+import Navbar from "./components/Navbar";
+
 
 function Router() {
   return (
@@ -14,6 +20,19 @@ function Router() {
     </Switch>
   );
 }
+
+function Home() { // Added Home component
+  return (
+    <>
+      <Navbar /> {/* Assuming Navbar is implemented */}
+      <Hero />
+      <Bio />
+      <Skills /> {/* Added Skills component */}
+      <Portfolio />
+    </>
+  );
+}
+
 
 function App() {
   return (

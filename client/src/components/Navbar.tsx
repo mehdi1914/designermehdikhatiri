@@ -80,10 +80,10 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.open("https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:8288764d-fc17-4854-a9ba-d03b462af49f", "_blank")}
-              className="bg-primary/20 text-primary hover:bg-primary/30 px-4 py-2 rounded-full flex items-center gap-2 transition-colors"
+              className="bg-gradient-to-r from-primary to-purple-400 text-white hover:opacity-90 px-4 py-2 rounded-full flex items-center gap-2 transition-all shadow-lg"
             >
               <FileDown className="h-4 w-4" />
-              Resume
+              Download CV
             </motion.button>
           </div>
 
