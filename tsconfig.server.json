@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "dist/server",
+    "rootDir": "server",
+    "strict": true
+  },
+  "include": ["server/**/*"]
+}
