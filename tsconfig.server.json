@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -8,6 +8,7 @@
     "rootDir": "server",
     "strict": true
   },
-  "include": ["server/**/*"]
+  "include": ["server/**/*"],
+  "exclude": ["node_modules"]
 }
 ```
